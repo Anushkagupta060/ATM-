@@ -1,0 +1,109 @@
+import time              #for stop the program because it take time to execute
+atm-flowchart.jpeg
+
+print("Please Insert Your CARD")    # we have get statment on the ATM display(Please Insert Your CARD) 
+
+time.sleep(3)    # take some time to fech the information of card from the bank database
+
+password = 1234  # our ATM pin
+pin = int(input("Enter Your Secret PIN "))  # asked ATM pin from the user 
+
+Account_Balance = 50000     # the current amount in the bank account is
+
+if pin == password:    # check the pin is correct or incorrect  
+    while True:        # this loop will be run because the user will not come out again and again from the program
+
+# this information show to the user____________________________________
+        print(""" 
+			1 == Account_Balance
+			2 == Withdraw_Amount
+			3 == Deposit_Amount
+			4 == Exit
+			"""
+              )
+
+        try:    # we have take the options from the user
+            option = int(input("Please Enter Your Choice "))
+        except:       # if user will not enter the valid option the it ask for the user valid option   
+            print("Please Enter Valid Option")
+
+        if option == 1:         # this condtion tell that the user balance in the user account 
+            print(f"Your Current Account_Balance is {Account_Balance}")
+                                     
+        if option == 2:         # this condition for withdraw amount from the user account 
+
+            Withdraw_Amount = int(input("Please Enter Withdraw_Amount "))
+
+            Account_Balance = Account_Balance - Withdraw_Amount   #calculate the update amount
+
+            print(f"{Withdraw_Amount} is Debited From Your Account") 
+
+            print(f"Your Updated Account_Balance is {Account_Balance}")  # it tell that the update amount in the user account
+
+            
+
+        if option == 3:       # this condition for the user when it want to deposit the amount 
+
+            Deposit_Amount = int(input("Please Enter Deposit_Amount"))
+
+            Account_Balance = Account_Balance + Deposit_Amount   # calculate the update amount 
+
+            print(f"{Deposit_Amount} is Credited to Your Account")
+
+            print(f"your Updated Account_Balance is {Account_Balance}")  # for tell the update balance
+
+
+
+        if option == 4:   # this condition for exit from the program
+            print("Thank You For Banking")
+
+            break  #All  condition are  break 
+
+
+else:  # when you enter the the invalid pin
+    print("You Enter Invalid PIN Please Try Again") 
+Please Insert Your CARD
+Enter Your Secret PIN 1234
+ 
+			1 == Account_Balance
+			2 == Withdraw_Amount
+			3 == Deposit_Amount
+			4 == Exit
+			
+Please Enter Your Choice 1
+Your Current Account_Balance is 50000
+ 
+			1 == Account_Balance
+			2 == Withdraw_Amount
+			3 == Deposit_Amount
+			4 == Exit
+			
+Please Enter Your Choice 5000
+ 
+			1 == Account_Balance
+			2 == Withdraw_Amount
+			3 == Deposit_Amount
+			4 == Exit
+			
+Please Enter Your Choice 2
+Please Enter Withdraw_Amount 50
+50 is Debited From Your Account
+Your Updated Account_Balance is 49950
+ 
+			1 == Account_Balance
+			2 == Withdraw_Amount
+			3 == Deposit_Amount
+			4 == Exit
+			
+Please Enter Your Choice 3
+Please Enter Deposit_Amount30000
+30000 is Credited to Your Account
+your Updated Account_Balance is 79950
+ 
+			1 == Account_Balance
+			2 == Withdraw_Amount
+			3 == Deposit_Amount
+			4 == Exit
+			
+Please Enter Your Choice 4
+Thank You For Banking
